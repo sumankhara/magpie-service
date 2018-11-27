@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>List of Books</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous"> -->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/pulse-bootstrap.min.css">
+</head>
+<body>
+	<div id="page">
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="#">
+				<h1>Magpie</h1>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarColor01" aria-controls="navbarColor01"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarColor01">
+				<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+					<li class="nav-item active"><a class="nav-link" href="#">
+							<span class="glyphicon glyphicon-home"></span>
+							<h5>Home</h5>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="/books">
+							<span class="glyphicon glyphicon-cd"></span>
+							<h5>Books</h5> <span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="Contact.html">
+							<span class="glyphicon glyphicon-earphone"></span>
+							<h5>Search</h5>
+					</a></li>
+				</ul>
+
+			</div>
+		</nav>
+
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<div class="panel">
+						<div class="panel-body">
+
+							<!--/stories-->
+							<div class="row" th:each="book : ${books}">
+								<br>
+								<div class="col-md-2 col-sm-3 text-center">
+									<a class="story-title" href="#"><img alt=""
+										src="http://api.randomuser.me/portraits/thumb/men/58.jpg"
+										style="width: 100px; height: 100px" class="img-circle"></a>
+								</div>
+								<div class="col-md-10 col-sm-9">
+									<h2 th:text="${book.title}"></h2>
+									<div class="row">
+										<div class="col-xs-9">
+											<h4>
+												<span class="label label-default" th:text="${book.author}"></span>
+											</h4>
+											<h5>
+												<span class="label label-default"
+													th:text="${book.subcategory}"></span>
+											</h5>
+											<h4>
+												<small style="font-family: courier, 'new courier';"
+													class="text-muted" th:text="${book.publisher}"></small>
+											</h4>
+											<h4>
+												Rs. <small style="font-family: courier, 'new courier';"
+													class="text-muted" th:text="${book.price}"></small>
+											</h4>
+											<h5>
+												<a th:href="@{'/books/' + ${book.id}}" class="text-muted">Read
+													More</a>
+											</h5>
+										</div>
+										<div class="col-xs-3"></div>
+									</div>
+									<br> <br>
+								</div>
+							</div>
+							<hr>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script> -->
+	<script src="/js/jquery-2.0.3.min.js"></script>
+  	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

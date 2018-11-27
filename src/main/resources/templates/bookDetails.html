@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+
+				<div class="panel">
+					<div class="panel-body">
+
+						
+
+ 						<div class="row">
+							<br>
+							<div class="col-md-2 col-sm-3 text-center">
+								<a class="story-title" href="#"><img alt=""
+									th:src="@{${bookImage}}"
+									style="width: 150px; height: 200px"></a>
+							</div>
+							<div class="col-md-10 col-sm-9">
+								<h3 th:text="${book.title}"></h3>
+								<div class="row">
+									<div class="col-xs-9">
+										<h4>
+											<span class="label label-default" th:text="${book.author}"></span>
+										</h4>
+										<h5>
+											<span class="label label-default" th:text="${book.subcategory}"></span>
+										</h5>
+										<h4>
+											<small style="font-family: courier, 'new courier';"
+												class="text-muted" th:text="${book.publisher}"></small>
+										</h4>
+										
+									</div>
+									<div class="col-xs-3"></div>
+								</div>
+								<br><p th:utext="${bookDescription}"/><br>
+							</div>
+						</div>
+						<hr>
+
+						<a href="/" class="btn btn-primary pull-right btnNext">More <i
+							class="glyphicon glyphicon-chevron-right"></i></a>
+
+
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+</body>
+</html>
